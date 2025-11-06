@@ -9,9 +9,11 @@ pipeline {
         BD_URL = credentials('BLACKDUCK_URL') // or use credentials if you really want
         BD_TOKEN = credentials('BLACKDUCK_API_TOKEN') // must be 'Secret text'
     }
+    
     triggers {
-        cron '15 03 * * 1-5' // Runs at 03:15 on every day-of-week from Monday through Friday.”
+        cron '15 03 * * 1-5' // Runs at 03:15 on every day-of-week from Monday through Friday
          }
+    
     stages {
         stage('Download and Extract Bridge CLI') {
             steps {
